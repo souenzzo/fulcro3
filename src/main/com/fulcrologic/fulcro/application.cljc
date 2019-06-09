@@ -53,7 +53,7 @@
       (log/error e "Cannot compute shared"))))
 
 (defn props-only-query [query]
-  (let [{:keys [children]} (eql/query->shallow-ast query)]
+  (let [{:keys [children]} (eql/query->ast query)]
     (into []
       (comp
         (map :key)
